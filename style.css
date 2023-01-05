@@ -1,0 +1,24 @@
+@media (min-width:768px) {
+    .container{
+        border: 2px solid black;
+        width: 50% !important;
+    }   
+}
+
+@media (min-width:992px) {
+    .container{
+        border: 2px solid black;
+        width: 40% !important;
+    }   
+}
+
+body{
+    background-color: #3333cc9a !important ;
+}
+.container{
+    border: none;
+    border-radius: 12px;
+    margin: 100px auto;
+    background: linear-gradient(to top, #33ccff 0%, #ff99cc 58%);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}

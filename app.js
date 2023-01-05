@@ -3,7 +3,7 @@ let min = 1,
   max = 10,
   winningNum = Math.floor(Math.random() * (max - min + 1) + min),
   guessesLeft = 3;
-console.log(winningNum);
+// console.log(winningNum);
 
 // UI Elements
 const game = document.querySelector("#game"),
@@ -28,19 +28,19 @@ game.addEventListener("mousedown", function (e) {
 guessBtn.addEventListener("click", function () {
   let guess = parseInt(guessInput.value);
 
-  // Validate
-  if (isNaN(guess) || guess < min || guess > max) {
-    setMessage(`Please enter a number from ${min} and ${max}`, "red");
-  }
-
   // Check IF WON
   if (guess === winningNum) {
     //Game over - WON
     gameOver(true, `${winningNum} is Correct,  YOU WIN!`);
-  } 
-  // If the input value is empty
-  else if (guessInput.value === "") {
-    alert("please enter a number");
+  }
+  // If the input value is empty or less or greater
+  else if (
+    guessInput.value === "" ||
+    isNaN(guess) ||
+    guess < min ||
+    guess > max
+  ) {
+    setMessage(`Please enter a number from ${min} and ${max}`, "red");
   } else {
     // Wrong NUmber
     guessesLeft -= 1;
@@ -85,8 +85,8 @@ function gameOver(won, msg) {
 }
 
 // Get winning Number
-// function getRandomNum(){
-//    return Math.floor(Math.random()*(max-min+1)+min);
+// function getRandomNum(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
 // }
 
 // Set Message

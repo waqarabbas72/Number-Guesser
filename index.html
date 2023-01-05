@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Number Guesser</title>
+    <link rel="stylesheet" href="style.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,25 +12,27 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <div class="container">
-      <h1>Number Guesser</h1>
-      <div id="game" class="row">
+  <body class="p-2">
+    <div class="container p-5">
+      <div class="row text-center">
+        <h1>Number Guesser</h1>
+      <div id="game" class="col text-center">
         <p>
           Guess a number from <span class="min-num"></span> and
           <span class="max-num"></span>
         </p>
 
-        <div class="box d-flex col-md-6">
+        <div class="box d-flex flex-column flex-sm-row">
           <input
             type="number"
             id="guess-input"
-            class="form-control"
+            class="form-control my-3 my-sm-0 mx-sm-2"
             placeholder="Enter Your Guess..."
           />
           <input type="submit" value="SUBMIT" id="guess-btn" />
         </div>
         <p class="message"></p>
+      </div>
       </div>
     </div>
 
